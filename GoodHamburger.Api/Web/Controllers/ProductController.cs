@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using GoodHamburger.Api.Web.Helpers;
 using GoodHamburger.Api.Application.Interfaces;
 using GoodHamburger.Api.Application.DTOs.Response.Product;
+using GoodHamburger.Shared.Models;
 
 namespace GoodHamburger.Api.Web.Controllers;
 
@@ -16,7 +16,7 @@ public class ProductsController : ControllerBase
         _productService = productService;
     }
 
-    [HttpGet("menu")]
+    [HttpGet] 
     public async Task<IActionResult> GetMenu()
     {
         var menu = await _productService.GetMenuAsync();

@@ -6,8 +6,21 @@ using GoodHamburger.Api.Application.Interfaces;
 using GoodHamburger.Api.Infrastructure.Data.Helpers;
 using GoodHamburger.Api.Infrastructure.Repositories;
 
-
 var builder = WebApplication.CreateBuilder(args);
+
+#region CORS Configuration
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("BlazorPolicy", policy =>
+    {
+        policy.AllowAnyOrigin() // Em produção, você colocaria a URL do Blazor aqui
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
+#endregion
 
 #region Services Configuration
 
@@ -27,16 +40,13 @@ foreach (var type in strategyImplementations)
     builder.Services.AddScoped(typeof(IDiscountStrategy), type);
 }
 
-
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
-
-
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
-
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 #endregion
 
 var app = builder.Build();
@@ -49,19 +59,35 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    
-    using var scope = app.Services.CreateScope();
-    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    
-    dbContext.Database.EnsureCreated(); 
-    
-    DbInitializer.Seed(dbContext);
 }
 
+// --- DATA BASE INITIALIZATION ---
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var dbContext = services.GetRequiredService<AppDbContext>();
+        
+        dbContext.Database.EnsureCreated(); 
+        
+        // Seed
+        DbInitializer.Seed(dbContext);
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Ocorreu um erro ao popular o banco de dados.");
+    }
+}
+// --- END OF DATA BASE INITIALIZATION ---
+
 app.UseHttpsRedirection();
+app.UseCors("BlazorPolicy");
 app.UseAuthorization();
 app.MapControllers(); 
-
 app.Run();
 
 #endregion
+
+public partial class Program { }

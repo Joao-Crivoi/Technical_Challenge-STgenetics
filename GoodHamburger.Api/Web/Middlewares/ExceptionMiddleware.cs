@@ -23,6 +23,10 @@ public class ExceptionMiddleware
         }
         catch (Exception ex)
         {
+            Console.WriteLine($"\n!!! ERRO DETECTADO: {ex.Message}");
+            if (ex.InnerException != null) 
+                Console.WriteLine($"!!! INNER EXCEPTION: {ex.InnerException.Message}");
+            
             await HandleExceptionAsync(context, ex);
         }
     }
@@ -43,6 +47,7 @@ public class ExceptionMiddleware
         var response = new
         {
             message = exception.Message,
+            innerError = exception.InnerException?.Message, 
             detail = exception is DomainException ? null : "An internal error occurred."
         };
 

@@ -17,5 +17,10 @@ public class AppDbContext : DbContext
         
         modelBuilder.Entity<Product>().Property(p => p.Price).HasPrecision(18, 2);
         modelBuilder.Entity<Order>().Property(o => o.Total).HasPrecision(18, 2);
+        modelBuilder.Entity<Order>().Property(o => o.Subtotal).HasPrecision(18, 2);
+        modelBuilder.Entity<Order>().Property(o => o.DiscountAmount).HasPrecision(18, 2);
+
+       
+        modelBuilder.Entity<OrderItem>().Property(oi => oi.UnitPrice).HasPrecision(18, 2);
     }
 }

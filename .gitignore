@@ -1,0 +1,35 @@
+# Build
+bin/
+obj/
+
+# Database
+*.db
+*.db-shm
+*.db-wal
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# dotnet
+*.DotSettings.user
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Blazor
+wwwroot/css/bootstrap/
+wwwroot/.publish/
+
+# Publicação
+publish/
+*.pubxml
+*.pubxml.user

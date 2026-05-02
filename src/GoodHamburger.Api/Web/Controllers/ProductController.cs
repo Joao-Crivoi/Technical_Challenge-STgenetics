@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using GoodHamburger.Api.Application.Interfaces;
-using GoodHamburger.Api.Application.DTOs.Response.Product;
+using GoodHamburger.Shared.DTOs.Response.Product;
 using GoodHamburger.Shared.Models;
 
 namespace GoodHamburger.Api.Web.Controllers;

@@ -1,0 +1,61 @@
+.content {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 1.5s ease-in;
+}
+
+.content.visible{
+    opacity: 1;
+}
+
+.grafite-text {
+    font-family: 'Permanent Marker', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grafite-text span {
+    color: #CC0000;
+    -webkit-text-stroke: 3px #FFD700;
+    font-size: 1rem;
+    opacity: 0;
+}
+
+.grafite-text-1 { animation: aparecer 0.5s ease forwards; animation-delay: 2s; }
+.grafite-text-2 { animation: aparecer 0.5s ease forwards; animation-delay: 2.3s; }
+.grafite-text-3 { animation: aparecer 0.3s ease forwards; animation-delay: 2.5s; }
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.8); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.hamburger-img {
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+}
+
+.light-beam {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to bottom-left, rgba(255, 220, 100, 0.3), transparent);
+    clip-path: polygon(100% 0%, 40% 0%, 0% 100%);
+}
+
+.splash-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

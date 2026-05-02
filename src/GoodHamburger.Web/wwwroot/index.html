@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoodHamburger.Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <base href="/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
@@ -27,6 +29,17 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        window.playSound = (src) => {
+            const audio = new Audio(src);
+            audio.play().catch(e => console.log('Audio blocked:', e));
+            return audio;
+        }
+
+        window.stopSound = (audio) => {
+            if (audio) audio.pause();
+        }
+    </script>
 </body>
 
 </html>

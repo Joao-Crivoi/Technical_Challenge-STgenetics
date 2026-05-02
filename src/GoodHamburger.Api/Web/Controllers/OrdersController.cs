@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using GoodHamburger.Api.Web.Constants;
 using GoodHamburger.Api.Application.Interfaces;
-using GoodHamburger.Api.Application.DTOs.Response.Order;
-using GoodHamburger.Api.Application.DTOs.Request.Order;
+using GoodHamburger.Shared.DTOs.Response.Order;
+using GoodHamburger.Shared.DTOs.Request.Order;
 using GoodHamburger.Shared.Models;
 
 namespace GoodHamburger.Api.Web.Controllers;

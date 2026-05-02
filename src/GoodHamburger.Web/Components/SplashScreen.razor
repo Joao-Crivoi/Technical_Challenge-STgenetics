@@ -1,0 +1,45 @@
+@using GoodHamburger.Web.Models.Enums
+@inject IJSRuntime JS
+
+
+<div class="splash-container">       
+    <div class="light-beam"/>        
+    <div class="content @VisibilityClass">
+        <img  style="max-width: 600px; height: auto; cursor: pointer;"  
+              class="hamburger-img" src="images/cheeseburger.webp" 
+              @onclick="HandleClick" />
+        <div class="grafite-text">
+            <span class="grafite-text-1">CLICK ME</span>
+            <span class="grafite-text-2">EAT ME</span>  
+            <span class="grafite-text-3">WHATEVER</span>      
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public EventCallback OnCompleted { get; set; }
+    
+    private int clickCount = 0;
+    private bool _isVisible = false;
+    private string VisibilityClass => _isVisible ? "visible" : string.Empty;
+    private async Task HandleClick()
+    { 
+        clickCount++;
+        if (clickCount >= 3)
+            await OnCompleted.InvokeAsync();
+    } 
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("playSound", "audio/light_flickering.ogg");
+            await Task.Delay(3000);
+            await JS.InvokeVoidAsync("playSound", "audio/light_switch.ogg");
+            _isVisible = true;
+            StateHasChanged();
+        }
+    }
+
+}

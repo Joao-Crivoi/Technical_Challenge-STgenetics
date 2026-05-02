@@ -1,5 +1,5 @@
 using AutoMapper;
-using GoodHamburger.Api.Application.DTOs.Response.Order;
+using GoodHamburger.Shared.DTOs.Response.Order;
 using GoodHamburger.Api.Domain.Entities;
 
 namespace GoodHamburger.Api.Application.Mappings;

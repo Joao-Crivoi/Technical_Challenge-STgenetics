@@ -1,5 +1,5 @@
-using GoodHamburger.Api.Application.DTOs.Request.Order;
-using GoodHamburger.Api.Application.DTOs.Response.Order;
+using GoodHamburger.Shared.DTOs.Request.Order;
+using GoodHamburger.Shared.DTOs.Response.Order;
 
 namespace GoodHamburger.Api.Application.Interfaces;
 

@@ -4,7 +4,7 @@ using System.Net.Http.Json;
 using GoodHamburger.Shared.Models;
 using GoodHamburger.Shared.Constants;
 using GoodHamburger.Tests.Infrastructure;
-using GoodHamburger.Api.Application.DTOs.Response.Product;
+using GoodHamburger.Shared.DTOs.Response.Product;
 
 namespace GoodHamburger.Tests.Integration.Controllers;
 

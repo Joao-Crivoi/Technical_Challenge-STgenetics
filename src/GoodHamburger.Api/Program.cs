@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("BlazorPolicy", policy =>
     {
-        policy.AllowAnyOrigin() // Em produção, você colocaria a URL do Blazor aqui
+        policy.AllowAnyOrigin()
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
@@ -45,7 +45,8 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 #endregion
 
@@ -61,17 +62,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// --- DATA BASE INITIALIZATION ---
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     try
     {
         var dbContext = services.GetRequiredService<AppDbContext>();
-        
-        dbContext.Database.EnsureCreated(); 
-        
-        // Seed
+        dbContext.Database.EnsureCreated();
         DbInitializer.Seed(dbContext);
     }
     catch (Exception ex)
@@ -80,12 +77,11 @@ using (var scope = app.Services.CreateScope())
         logger.LogError(ex, "Ocorreu um erro ao popular o banco de dados.");
     }
 }
-// --- END OF DATA BASE INITIALIZATION ---
 
 app.UseHttpsRedirection();
 app.UseCors("BlazorPolicy");
 app.UseAuthorization();
-app.MapControllers(); 
+app.MapControllers();
 app.Run();
 
 #endregion

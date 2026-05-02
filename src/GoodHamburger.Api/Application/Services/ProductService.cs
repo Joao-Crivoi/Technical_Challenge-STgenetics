@@ -1,6 +1,6 @@
 using AutoMapper;
 using GoodHamburger.Api.Application.Interfaces;
-using GoodHamburger.Api.Application.DTOs.Response.Product;
+using GoodHamburger.Shared.DTOs.Response.Product;
 
 namespace GoodHamburger.Api.Application.Services;
 

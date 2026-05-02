@@ -1,4 +1,4 @@
-namespace GoodHamburger.Api.Application.DTOs.Request.Order;
+namespace GoodHamburger.Shared.DTOs.Request.Order;
 
 public class CreateOrderRequestDTO
 {

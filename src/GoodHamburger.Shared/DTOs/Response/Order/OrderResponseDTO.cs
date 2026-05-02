@@ -1,5 +1,4 @@
-namespace GoodHamburger.Api.Application.DTOs.Response.Order;
-
+namespace GoodHamburger.Shared.DTOs.Response.Order;
 public class OrderResponseDTO
 {
     public Guid Id { get; set; }

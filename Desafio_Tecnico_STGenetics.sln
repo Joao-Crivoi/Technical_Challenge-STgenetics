@@ -6,6 +6,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodHamburger.Api", "GoodHa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodHamburger.Shared", "GoodHamburger.Shared\GoodHamburger.Shared.csproj", "{DA780C7A-F286-4042-BE32-3355CE355A99}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3132598B-3E3A-4B08-B1E8-5418D3045B61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodHamburger.Web", "src\GoodHamburger.Web\GoodHamburger.Web.csproj", "{0CAD45E3-A8DA-45B9-908A-7DAB50766CBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodHamburger.Api", "src\GoodHamburger.Api\GoodHamburger.Api.csproj", "{3937564C-00C2-471D-917C-5AE25392205E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodHamburger.Shared", "src\GoodHamburger.Shared\GoodHamburger.Shared.csproj", "{84454EDD-2C8C-49C2-BF7F-A83C2236294B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,11 +28,28 @@ Global
 		{DA780C7A-F286-4042-BE32-3355CE355A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA780C7A-F286-4042-BE32-3355CE355A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA780C7A-F286-4042-BE32-3355CE355A99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CAD45E3-A8DA-45B9-908A-7DAB50766CBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CAD45E3-A8DA-45B9-908A-7DAB50766CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CAD45E3-A8DA-45B9-908A-7DAB50766CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CAD45E3-A8DA-45B9-908A-7DAB50766CBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3937564C-00C2-471D-917C-5AE25392205E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3937564C-00C2-471D-917C-5AE25392205E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3937564C-00C2-471D-917C-5AE25392205E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3937564C-00C2-471D-917C-5AE25392205E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84454EDD-2C8C-49C2-BF7F-A83C2236294B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84454EDD-2C8C-49C2-BF7F-A83C2236294B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84454EDD-2C8C-49C2-BF7F-A83C2236294B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84454EDD-2C8C-49C2-BF7F-A83C2236294B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0981E9CF-C6BD-4815-9504-3D719A86BA8B}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0CAD45E3-A8DA-45B9-908A-7DAB50766CBD} = {3132598B-3E3A-4B08-B1E8-5418D3045B61}
+		{3937564C-00C2-471D-917C-5AE25392205E} = {3132598B-3E3A-4B08-B1E8-5418D3045B61}
+		{84454EDD-2C8C-49C2-BF7F-A83C2236294B} = {3132598B-3E3A-4B08-B1E8-5418D3045B61}
 	EndGlobalSection
 EndGlobal

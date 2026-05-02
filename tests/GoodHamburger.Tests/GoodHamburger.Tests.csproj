@@ -26,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\GoodHamburger.Api\GoodHamburger.Api.csproj" />
     <ProjectReference Include="..\GoodHamburger.Shared\GoodHamburger.Shared.csproj" />
+    <ProjectReference Include="..\..\src\GoodHamburger.Shared\GoodHamburger.Shared.csproj" />
   </ItemGroup>
 
 </Project>

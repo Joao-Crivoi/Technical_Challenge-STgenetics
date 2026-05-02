@@ -1,0 +1,39 @@
+﻿@page "/"
+@using GoodHamburger.Web.Services
+@using GoodHamburger.Shared.DTOs.Response.Product
+@inject IProductService ProductService
+
+<PageTitle>Menu - GoodHamburger</PageTitle>
+
+<h1>🍔 Our Menu</h1>
+
+@if (products == null)
+{
+    <p><em>Loading your burger options...</em></p>
+}
+else
+{
+    <div class="row">
+        @foreach (var product in products)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text text-success">@product.Price.ToString("C")</p>
+                        <button class="btn btn-primary">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private IEnumerable<ProductResponseDTO>? products;
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await ProductService.GetProductsAsync();
+    }
+}

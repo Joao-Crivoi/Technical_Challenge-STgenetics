@@ -1,4 +1,4 @@
-namespace GoodHamburger.Api.Application.DTOs.Response.Product;
+namespace GoodHamburger.Shared.DTOs.Response.Product;
 
 public class ProductResponseDTO
 {

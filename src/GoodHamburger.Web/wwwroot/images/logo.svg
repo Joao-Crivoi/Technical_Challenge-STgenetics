@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420">
+
+  <defs>
+    <!-- módulo reutilizável -->
+    <g id="carne">
+      <ellipse cx="340" cy="118" rx="100" ry="14" fill="#6B3410"/>
+      <ellipse cx="340" cy="123" rx="98" ry="12" fill="#8B4513"/>
+      <ellipse cx="325" cy="126" rx="30" ry="6" fill="#A0522D" opacity="0.4"/>
+    </g>
+
+    <path id="queijo"
+      d="M240,143 Q265,148 280,155 Q310,148 340,150 Q370,148 400,155 Q415,148 440,143 L440,158 Q415,163 400,170 Q370,163 340,165 Q310,163 280,170 Q265,163 240,158 Z"
+      fill="#FFD700"/>
+  </defs>
+
+  <!-- 🍖 Carne 1 -->
+  <use href="#carne" />
+
+  <!-- 🧀 Queijo 1 -->
+  <use href="#queijo" transform="translate(0,-24)" />
+
+  <!-- Meio -->
+  <g transform="translate(0,-18)">
+
+    <!-- Tomate cima -->
+    <path d="M210,162 Q265,155 340,158 Q415,155 470,162 L468,170 Q415,163 340,166 Q265,163 212,170 Z"
+          fill="#E53935" opacity="0.9"/>
+
+    <!-- Salada -->
+    <path d="M200,165 Q225,155 250,168 Q275,158 300,170 Q325,160 340,168 Q355,160 380,170 Q405,158 430,168 Q455,155 480,165 Q460,180 430,183 Q405,173 380,185 Q355,173 340,180 Q325,173 300,185 Q275,173 250,183 Q220,180 200,165 Z"
+          fill="#4CAF50"/>
+    <path d="M200,165 Q225,172 250,168 Q275,175 300,170 Q325,177 340,168 Q355,177 380,170 Q405,175 430,168 Q455,172 480,165"
+          fill="none" stroke="#388E3C" stroke-width="2" opacity="0.6"/>
+
+    <!-- Tomate baixo -->
+    <path d="M210,180 Q265,187 340,184 Q415,187 470,180 L468,192 Q415,199 340,196 Q265,199 212,192 Z"
+          fill="#E53935" opacity="0.9"/>
+
+<g transform="translate(0,55)">
+  <path 
+    d="M240,143 Q265,148 280,155 Q310,148 340,150 Q370,148 400,155 Q415,148 440,143 L440,158 Q415,163 400,170 Q370,163 340,165 Q310,163 280,170 Q265,163 240,158 Z"
+    fill="#FFD700"
+    transform="rotate(180,340,150)"
+  />
+</g>
+
+ 
+
+    <!-- 🍖 Carne 2 (MESMO PADRÃO) -->
+    <use href="#carne" transform="translate(0,92)" />
+
+  </g>
+
+
+<!-- Base --> <g transform="translate(0,-25)"> <ellipse cx="340" cy="238" rx="125" ry="20" fill="#A0692A"/> <ellipse cx="340" cy="245" rx="125" ry="26" fill="#C68642"/> <ellipse cx="340" cy="248" rx="120" ry="22" fill="#D4923A" opacity="0.1"/><ellipse cx="340" cy="232" rx="125" ry="10" fill="#8B5530"/> <text x="340" y="258" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#f9decb" letter-spacing="3"> GOOD HAMBURGER </text> <ellipse cx="340" cy="278" rx="115" ry="8" fill="#00000022"/> </g>
+
+
+
+
+
+  <!-- Pão de cima -->
+  <g transform="translate(0,2)">
+    <ellipse cx="340" cy="95" rx="120" ry="22" fill="#8B5530"/>
+    <ellipse cx="340" cy="82" rx="120" ry="32" fill="#C68642"/>
+    <ellipse cx="340" cy="78" rx="118" ry="30" fill="#D4923A" opacity="0.15"/>
+    <ellipse cx="315" cy="68" rx="40" ry="16" fill="#E8A84A" opacity="0.25"/>
+    <ellipse cx="300" cy="65" rx="8" ry="3" fill="#E8C98A" transform="rotate(-20,300,65)"/>
+    <ellipse cx="338" cy="58" rx="8" ry="3" fill="#E8C98A"/>
+    <ellipse cx="376" cy="65" rx="8" ry="3" fill="#E8C98A" transform="rotate(20,376,65)"/>
+    <ellipse cx="320" cy="76" rx="6" ry="2.5" fill="#E8C98A" transform="rotate(-10,320,76)"/>
+    <ellipse cx="358" cy="73" rx="6" ry="2.5" fill="#E8C98A" transform="rotate(10,358,73)"/>
+  </g>
+
+  <!-- GH -->
+  <text x="283" y="100" font-family="Georgia, serif" font-size="58" font-weight="700" fill="#C0392B" opacity="0.85">G</text>
+  <text x="348" y="100" font-family="Georgia, serif" font-size="58" font-weight="700" fill="#8B5E3C" opacity="0.85">H</text>
+
+</svg>

@@ -1,54 +1,4 @@
-.content {
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: opacity 1.5s ease-in;
-}
-
-.content.visible{
-    opacity: 1;
-}
-
-.grafite-text {
-    font-family: 'Permanent Marker', cursive;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.grafite-text span {
-    color: #CC0000;
-    -webkit-text-stroke: 3px #FFD700;
-    font-size: 1rem;
-    opacity: 0;
-}
-
-.grafite-text-1 { animation: aparecer 0.5s ease forwards; animation-delay: 2s; }
-.grafite-text-2 { animation: aparecer 0.5s ease forwards; animation-delay: 2.3s; }
-.grafite-text-3 { animation: aparecer 0.3s ease forwards; animation-delay: 2.5s; }
-
-@keyframes aparecer {
-    from { opacity: 0; transform: scale(0.8); }
-    to   { opacity: 1; transform: scale(1); }
-}
-
-.hamburger-img {
-    width: 300px;
-    height: auto;
-    cursor: pointer;
-}
-
-.light-beam {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(to bottom-left, rgba(255, 220, 100, 0.3), transparent);
-    clip-path: polygon(100% 0%, 40% 0%, 0% 100%);
-}
-
+/* Splash Container and Children Styles */ 
 .splash-container {
     width: 100vw;
     height: 100vh;
@@ -59,3 +9,139 @@
     align-items: center;
 }
 
+.content_splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 1.5s ease-in;
+}
+
+.hamburger-img.img-visible {
+    opacity: 1;
+}
+
+
+/* Cheese Text Style and Animation */
+.cheese-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cheese-text span {
+    color: #CC0000;
+    -webkit-text-stroke: 2px #FFD700;
+    font-size: 2.5vw;
+    opacity: 0;
+}
+
+.cheese-text.text-visible .cheese-text-1 { 
+    animation: aparecer 0.6s ease forwards; 
+    animation-delay: 2s; 
+}
+.cheese-text.text-visible .cheese-text-2 { 
+    animation: aparecer 0.5s ease forwards; 
+    animation-delay: 2.5s; 
+}
+.cheese-text.text-visible .cheese-text-3 { 
+    animation: aparecer 0.1s ease forwards; 
+    animation-delay: 3s; 
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.8); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* Images */
+
+.hamburger-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.freeburger-arc {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+     pointer-events: none;
+}
+
+.splash-logo {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 15vw;
+    height: auto;
+    z-index: 10;
+}
+
+.hamburger-img {
+    opacity: 0;
+    width: 60vw;
+    height: auto;
+    cursor: pointer;
+    transition: opacity 1.5s ease-in, clip-path 0.4s ease;
+}
+
+
+/* Bite Animations */
+
+.bite-0 { clip-path: none; }
+
+.bite-1 {
+    clip-path: polygon(
+        0% 0%, 0% 15%,
+        10% 35%, 20% 12%, 30% 42%, 40% 15%, 50% 45%, 60% 18%, 70% 40%, 80% 12%, 90% 38%, 100% 20%,
+        100% 100%, 0% 100%
+    );
+}
+
+.bite-2 {
+    clip-path: polygon(
+        0% 20%,
+        8% 55%, 18% 25%, 28% 62%, 38% 28%, 48% 68%, 58% 30%, 68% 65%, 78% 28%, 88% 60%, 100% 35%,
+        100% 100%, 0% 100%
+    );
+}
+
+.bite-3 {
+    opacity: 0;
+}
+
+
+.neon-text {
+    font-family: 'Nosifer', sans-serif;
+    font-size: 28px;
+    fill: #555;
+}
+
+.neon-text.aceso {
+    fill: #ff2020;
+    animation: flickering 3s ease-in forwards,
+               neon-loop 4s ease-in-out 3s infinite;
+}
+
+@keyframes flickering {
+    0%   { fill: #555; filter: none; }
+    5%   { fill: #ff2020; filter: drop-shadow(0 0 6px #ff2020) drop-shadow(0 0 15px #ff0000); }
+    8%   { fill: #555; filter: none; }
+    15%  { fill: #ff2020; filter: drop-shadow(0 0 6px #ff2020) drop-shadow(0 0 15px #ff0000); }
+    20%  { fill: #333; filter: none; }
+    30%  { fill: #ff2020; filter: drop-shadow(0 0 8px #ff2020) drop-shadow(0 0 20px #ff0000); }
+    35%  { fill: #555; filter: none; }
+    50%  { fill: #ff2020; filter: drop-shadow(0 0 10px #ff2020) drop-shadow(0 0 25px #ff0000); }
+    55%  { fill: #ff2020; filter: drop-shadow(0 0 4px #ff2020); }
+    70%  { fill: #ff2020; filter: drop-shadow(0 0 10px #ff2020) drop-shadow(0 0 25px #ff0000); }
+    100% { fill: #ff2020; filter: drop-shadow(0 0 8px #ff2020) drop-shadow(0 0 20px #ff0000) drop-shadow(0 0 40px #ff0000); }
+}
+
+@keyframes neon-loop {
+    0%   { filter: drop-shadow(0 0 8px #ff2020) drop-shadow(0 0 20px #ff0000); }
+    25%  { filter: drop-shadow(0 0 4px #ff2020) drop-shadow(0 0 10px #ff0000); }
+    50%  { filter: drop-shadow(0 0 10px #ff2020) drop-shadow(0 0 25px #ff0000); }
+    75%  { filter: drop-shadow(0 0 3px #ff2020); }
+    100% { filter: drop-shadow(0 0 8px #ff2020) drop-shadow(0 0 20px #ff0000); }
+}

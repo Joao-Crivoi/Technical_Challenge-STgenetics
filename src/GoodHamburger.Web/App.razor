@@ -1,10 +1,16 @@
 ﻿@using GoodHamburger.Web.Components.Layout
 
-
-
-@if (splashCompleto)
+@if (!_doorPassed)
 {
-    <Router AppAssembly="@typeof(App).Assembly">
+    <DoorScreen OnCompleted="() => _doorPassed = true" />
+}
+else if (!_splashCompleto)
+{
+    <SplashScreen OnCompleted="() => _splashCompleto = true" />
+}
+else
+{
+       <Router AppAssembly="@typeof(App).Assembly">
         
         
         <Found Context="routeData">
@@ -23,11 +29,8 @@
 
     </Router>
 }
-else
-{
-    <SplashScreen OnCompleted="() => splashCompleto = true" />
-}
 
 @code {
-    private bool splashCompleto = false;
+    private bool _doorPassed = false;
+    private bool _splashCompleto = false;
 }
